@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Select category</title>
+</head>
+<body>
+<form action="/product_add/product_description" method="get">
+  <select name="categoryId">
+    <option th:each="category : ${categories}" th:value="${category.getId()}" th:text="${category.getName()}"></option>
+  </select>
+
+
+  <button type="submit">Добавить</button>
+
+
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Product list practice</title>
+</head>
+<body>
+<form action="/repository_test/third_resource" method="get">
+    <select name="categoryId">
+        <option th:each="category : ${categories}" th:value="${category.getId()}"></option>
+    </select>
+
+    <input type="number" name="minPrice">
+    <input type="number" name="maxPrice">
+    <button type="submit">Отфильтровать</button>
+
+</form>
+
+
+<div th:each="product : ${products}">
+
+    <p>Категория: <span th:text="${product.getCategory()}"></span></p>
+    <p>Название: <span th:text="${product.getName()}"></span></p>
+    <p>Стоимость: <span th:text="${product.getPrice()}"></span></p>
+
+</div>
+</body>
+</html>

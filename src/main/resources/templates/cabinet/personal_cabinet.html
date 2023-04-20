@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal_cabinet</title>
+</head>
+<body>
+
+<b>Информация о пользователе:</b>
+<div th:each="user : ${user}">
+
+
+    <p>ID пользователя: <span th:text="${user.getId()}"></span></p>
+    <p>Имя пользователя: <span th:text="${user.getName()}"></span></p>
+    <p>Фамилия пользователя: <span th:text="${user.getSurname()}"></span></p>
+    <p>Логин пользователя: <span th:text="${user.getLogin()}"></span></p>
+    <p>Пароль пользователя: <span th:text="${user.getPassword()}"></span></p>
+    <p>Электронная почта пользователя: <span th:text="${user.getEmail()}"></span></p>
+    <p>Номер пользователя: <span th:text="${user.getNumber()}"></span></p>
+    <p>Дата: <span th:text="${user.getDate()}"></span></p>
+
+
+</div>
+<hr>
+
+<b>Информация о заказах:</b>
+<div th:each="order : ${order}">
+
+
+    <p>Номер заказа: <span th:text="${order.getId()}"></span></p>
+    <p>Статус заказа: <span th:text="${order.getStatus()}"></span></p>
+    <p>Улица: <span th:text="${order.getStreet()}"></span></p>
+    <p>Дом: <span th:text="${order.getBuilding()}"></span></p>
+    <p>Этаж: <span th:text="${order.getFloor()}"></span></p>
+    <p>Квартира: <span th:text="${order.getFlat()}"></span></p>
+    <p>Дата: <span th:text="${order.getDate()}"></span></p>
+
+
+</div>
+<hr>
+
+<b>Комментарии:</b>
+<div th:each="comment : ${comment}">
+
+
+    <p>Номер продукта: <span th:text="${comment.getId()}"></span></p>
+    <p>Модерация: <span th:text="${comment.getModeration()}"></span></p>
+    <p>Оценка: <span th:text="${comment.getScore()}"></span></p>
+    <p>Текст комментария: <span th:text="${comment.getComment()}"></span></p>
+    <p>Дата: <span th:text="${comment.getDate()}"></span></p>
+
+
+</div>
+<hr>
+
+
+
+</body>
+</html>

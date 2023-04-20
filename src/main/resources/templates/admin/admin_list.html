@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Admin list</title>
+</head>
+<body>
+
+<form action="/admin/change" method="GET">
+
+    <select name="status">
+        <option th:each="status : ${statuses}" th:text="${status.name()}"></option>
+    </select>
+
+    <select name="order">
+        <option th:each="order : ${orders}" th:text="${order.getId()}"></option>
+    </select>
+
+
+    <button type="submit">Изменить</button>
+
+
+</form>
+
+
+</body>
+</html>

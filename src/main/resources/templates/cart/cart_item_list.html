@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Cart Add product</title>
+</head>
+<body>
+
+<div th:each="cartItems : ${cartItems}">
+
+  <p>Пользователь: <span th:text="${cartItems.getUser().getId}"></span></p>
+  <p>Товар: <span th:text="${cartItems.getProduct().getName()}"></span></p>
+  <p>Количество: <span th:text="${cartItems.getQuantity()}"></span></p>
+  <p>Сумма: <span th:text="${cartItems.getProduct().getPrice()*cartItems.getQuantity()}"></span></p>
+
+</div>
+
+
+<div th:each="total : ${total}">
+
+  <p>Общая сумма: <span th:text="${total}"></span></p>
+
+
+</div>
+
+
+<form action="/order/order_resource" method="post">
+
+  <input type="text" name="street">
+
+  <input type="text" name="building">
+
+  <input type="text" name="floor">
+
+  <input type="text" name="flat">
+
+
+  <button type="submit">Добавить</button>
+
+</form>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Добавление проекта</title>
+
+</head>
+<body>
+
+
+<form action="/product_add/product_description" method="post">
+    <input type="hidden" name="categoryId" th:value="${category.getId()}">
+
+    <input type="text" name="name">
+
+    <input type="text" name="price">
+
+
+
+    <!--<span th:each="option : ${category.getOptions()}" th:text="${option.getName()}"></span>-->
+
+    <th:block th:each="option : ${category.getOptions()}">
+        <input type="hidden" name="option" th:value="${option.getId()}">
+        <input type="text" name="value" th:placeholder="${option.getName()}">
+    </th:block>
+
+    <button type="submit">Добавить</button>
+</form>
+
+
+</body>
+</html>
+
+
+

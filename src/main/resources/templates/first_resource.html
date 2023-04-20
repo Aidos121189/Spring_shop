@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>First resource</title>
+</head>
+<body>
+
+<h2 th:text="${message}"></h2>           <!---через ключ message - вытаскиваем значение Message from TestController2;--->
+
+<div th:text="${tasks}"> </div>          <!---через ключ tasks - вытаскиваем значение [Learn Spring, Hello Word!, ABC].--->
+
+
+
+
+<h3 th:text="${tasks.get(0)}"></h3>     <!---tasks - полноценный объект у которого мы можем вызывать методы (0 и 1 элемент к примеру).--->
+<h3 th:text="${tasks.get(1)}"></h3>
+
+
+<h3 th:each="task : ${tasks}" th:text="${task}"></h3>       <!---Создаем цикл типа Форич --->
+
+
+<div th:each="task : ${tasks}">
+  <p>Название задачи: <span th:text="${task}"></span></p>
+</div>
+
+
+
+
+</body>
+</html>
